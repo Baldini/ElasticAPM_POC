@@ -1,0 +1,193 @@
+[
+  {
+    "name": "Executor",
+    "model": "Executor-class star dreadnought",
+    "manufacturer": "Kuat Drive Yards, Fondor Shipyards",
+    "costInCredits": "1143350000",
+    "length": "19000",
+    "maxAtmospheringSpeed": "n/a",
+    "crew": "279144",
+    "passengers": "38000",
+    "cargoCapacity": "250000000",
+    "consumables": "6 years",
+    "hyperdriveRating": "2.0",
+    "MGLT": "40",
+    "starshipClass": "Star dreadnought",
+    "films": [
+      "2",
+      "3"
+    ]
+  },
+  {
+    "name": "Sentinel-class landing craft",
+    "model": "Sentinel-class landing craft",
+    "manufacturer": "Sienar Fleet Systems, Cyngus Spaceworks",
+    "costInCredits": "240000",
+    "length": "38",
+    "maxAtmospheringSpeed": "1000",
+    "crew": "5",
+    "passengers": "75",
+    "cargoCapacity": "180000",
+    "consumables": "1 month",
+    "hyperdriveRating": "1.0",
+    "MGLT": "70",
+    "starshipClass": "landing craft",
+    "films": [
+      "1"
+    ]
+  },
+  {
+    "name": "Death Star",
+    "model": "DS-1 Orbital Battle Station",
+    "manufacturer": "Imperial Department of Military Research, Sienar Fleet Systems",
+    "costInCredits": "1000000000000",
+    "length": "120000",
+    "maxAtmospheringSpeed": "n/a",
+    "crew": "342953",
+    "passengers": "843342",
+    "cargoCapacity": "1000000000000",
+    "consumables": "3 years",
+    "hyperdriveRating": "4.0",
+    "MGLT": "10",
+    "starshipClass": "Deep Space Mobile Battlestation",
+    "films": [
+      "1"
+    ]
+  },
+  {
+    "name": "Millennium Falcon",
+    "model": "YT-1300 light freighter",
+    "manufacturer": "Corellian Engineering Corporation",
+    "costInCredits": "100000",
+    "length": "34.37",
+    "maxAtmospheringSpeed": "1050",
+    "crew": "4",
+    "passengers": "6",
+    "cargoCapacity": "100000",
+    "consumables": "2 months",
+    "hyperdriveRating": "0.5",
+    "MGLT": "75",
+    "starshipClass": "Light freighter",
+    "films": [
+      "2",
+      "7",
+      "3",
+      "1"
+    ]
+  },
+  {
+    "name": "Y-wing",
+    "model": "BTL Y-wing",
+    "manufacturer": "Koensayr Manufacturing",
+    "costInCredits": "134999",
+    "length": "14",
+    "maxAtmospheringSpeed": "1000km",
+    "crew": "2",
+    "passengers": "0",
+    "cargoCapacity": "110",
+    "consumables": "1 week",
+    "hyperdriveRating": "1.0",
+    "MGLT": "80",
+    "starshipClass": "assault starfighter",
+    "films": [
+      "2",
+      "3",
+      "1"
+    ]
+  },
+  {
+    "name": "X-wing",
+    "model": "T-65 X-wing",
+    "manufacturer": "Incom Corporation",
+    "costInCredits": "149999",
+    "length": "12.5",
+    "maxAtmospheringSpeed": "1050",
+    "crew": "1",
+    "passengers": "0",
+    "cargoCapacity": "110",
+    "consumables": "1 week",
+    "hyperdriveRating": "1.0",
+    "MGLT": "100",
+    "starshipClass": "Starfighter",
+    "films": [
+      "2",
+      "3",
+      "1"
+    ]
+  },
+  {
+    "name": "TIE Advanced x1",
+    "model": "Twin Ion Engine Advanced x1",
+    "manufacturer": "Sienar Fleet Systems",
+    "costInCredits": "unknown",
+    "length": "9.2",
+    "maxAtmospheringSpeed": "1200",
+    "crew": "1",
+    "passengers": "0",
+    "cargoCapacity": "150",
+    "consumables": "5 days",
+    "hyperdriveRating": "1.0",
+    "MGLT": "105",
+    "starshipClass": "Starfighter",
+    "films": [
+      "1"
+    ]
+  },
+  {
+    "name": "Slave 1",
+    "model": "Firespray-31-class patrol and attack",
+    "manufacturer": "Kuat Systems Engineering",
+    "costInCredits": "unknown",
+    "length": "21.5",
+    "maxAtmospheringSpeed": "1000",
+    "crew": "1",
+    "passengers": "6",
+    "cargoCapacity": "70000",
+    "consumables": "1 month",
+    "hyperdriveRating": "3.0",
+    "MGLT": "70",
+    "starshipClass": "Patrol craft",
+    "films": [
+      "2",
+      "5"
+    ]
+  },
+  {
+    "name": "Imperial shuttle",
+    "model": "Lambda-class T-4a shuttle",
+    "manufacturer": "Sienar Fleet Systems",
+    "costInCredits": "240000",
+    "length": "20",
+    "maxAtmospheringSpeed": "850",
+    "crew": "6",
+    "passengers": "20",
+    "cargoCapacity": "80000",
+    "consumables": "2 months",
+    "hyperdriveRating": "1.0",
+    "MGLT": "50",
+    "starshipClass": "Armed government transport",
+    "films": [
+      "2",
+      "3"
+    ]
+  },
+  {
+    "name": "EF76 Nebulon-B escort frigate",
+    "model": "EF76 Nebulon-B escort frigate",
+    "manufacturer": "Kuat Drive Yards",
+    "costInCredits": "8500000",
+    "length": "300",
+    "maxAtmospheringSpeed": "800",
+    "crew": "854",
+    "passengers": "75",
+    "cargoCapacity": "6000000",
+    "consumables": "2 years",
+    "hyperdriveRating": "2.0",
+    "MGLT": "40",
+    "starshipClass": "Escort ship",
+    "films": [
+      "2",
+      "3"
+    ]
+  }
+]
