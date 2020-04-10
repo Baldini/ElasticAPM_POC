@@ -9,10 +9,6 @@ Just a simple implementation of Elastic APM with 2 API's in .NET Core and 2 Data
 
  Go to folder main folder and start the docker-compose or start the docker-compose from Visual Studio
 
-Access Raven Url to accept EULA, the default Url is http://localhost:8080
-
-![image](https://github.com/Baldini/ElasticAPM_POC/blob/master/images/raven.png?raw=true)
-
 Access the Kibana Url to configure APM server, the default Url is http://localhost:5601
 
 ![image](https://github.com/Baldini/ElasticAPM_POC/blob/master/images/kibana_1.png?raw=true)
