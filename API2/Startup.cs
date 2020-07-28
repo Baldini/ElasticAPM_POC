@@ -42,7 +42,7 @@ namespace API2
 
             services.AddSingleton<IDocumentStore>(store);
 
-            services.AddScoped<IAsyncDocumentSession>(serviceProvider =>
+            services.AddScoped(serviceProvider =>
             {
                 return serviceProvider
                     .GetService<IDocumentStore>()
@@ -89,7 +89,7 @@ namespace API2
         public async Task InitialData(IApplicationBuilder app)
         {
 
-            var starships = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Startship>>(File.ReadAllText("InitialData.json"));
+            var starships = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Starship>>(File.ReadAllText("InitialData.json"));
             using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
             {
                 var store = serviceScope.ServiceProvider.GetRequiredService<IDocumentStore>();
@@ -97,7 +97,7 @@ namespace API2
 
                 var db = serviceScope.ServiceProvider.GetRequiredService<IAsyncDocumentSession>();
 
-                if (!await db.Query<Startship>().AnyAsync())
+                if (!await db.Query<Starship>().AnyAsync())
                 {
                     foreach (var item in starships)
                     {

@@ -2,7 +2,7 @@
 
 namespace API2
 {
-    public class Startship
+    public class Starship
     {
         public string Name { get; set; }
         public string Model { get; set; }

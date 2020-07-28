@@ -1,11 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Elastic.Apm.SerilogEnricher;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using Serilog;
+using Serilog.Formatting.Elasticsearch;
+using Serilog.Sinks.Elasticsearch;
+using System;
 
 namespace API2
 {
@@ -20,7 +19,20 @@ namespace API2
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseStartup<Startup>();
+                    webBuilder.UseStartup<Startup>()
+                    .UseSerilog((context, configuration) =>
+                    {
+                        configuration.Enrich.WithElasticApmCorrelationInfo();
+                        configuration.WriteTo.Console(outputTemplate: "[{ElasticApmTraceId} {ElasticApmTransactionId} {Message:lj} {NewLine}{Exception}");
+                        configuration.WriteTo.Elasticsearch(
+                            new ElasticsearchSinkOptions(new Uri("http://elasticsearch:9200"))
+                            {
+                                AutoRegisterTemplate = true,
+                                AutoRegisterTemplateVersion = AutoRegisterTemplateVersion.ESv6,
+                                CustomFormatter = new ElasticsearchJsonFormatter(),
+                                BufferBaseFilename = "./logs/log",
+                            });
+                    });
                 });
     }
 }

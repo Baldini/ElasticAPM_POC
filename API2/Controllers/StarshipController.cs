@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Elastic.Apm;
+using Elastic.Apm.Api;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using Raven.Client.Documents;
 using Raven.Client.Documents.Linq;
 using Raven.Client.Documents.Session;
@@ -12,23 +15,37 @@ namespace API2.Controllers
     public class StarshipController : ControllerBase
     {
         private readonly IAsyncDocumentSession _db;
+        private readonly ILogger<StarshipController> _logger;
 
-        public StarshipController(IAsyncDocumentSession db)
+        public StarshipController(IAsyncDocumentSession db, ILogger<StarshipController> logger)
         {
             _db = db;
+            _logger = logger;
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<Startship>>> Get()
+        public async Task<ActionResult<List<Starship>>> Get()
         {
-            return Ok(await _db.Query<Startship>().ToListAsync());
+            var result = new List<Starship>();
+            await Agent.Tracer.CaptureTransaction("GetStarships", ApiConstants.TypeRequest,
+            async (transaction) =>
+            {
+                transaction.Labels["LabelTeste"] = "foo";
+
+                result = await _db.Query<Starship>().ToListAsync();
+
+                transaction.End();
+
+            });
+            return Ok(result);
         }
 
         [HttpGet]
         [Route("{filmId}")]
-        public async Task<ActionResult<List<Startship>>> Get(string filmId)
+        public async Task<ActionResult<List<Starship>>> Get(string filmId)
         {
-            return Ok(await _db.Query<Startship>().Where(t => t.Films.Contains(filmId)).ToListAsync());
+            _logger.LogInformation($"Get for film {filmId}");
+            return Ok(await _db.Query<Starship>().Where(t => t.Films.Contains(filmId)).ToListAsync());
         }
     }
 }
